@@ -8,9 +8,15 @@
         <h3 class="card-title">{{ item.ItemName }}</h3>
       </router-link>
       <p class="card-text">{{ item.Description }}</p>
-      <p class="card-text">
+      <div class="row">
+        <p class="card-text col base-price">
+          ${{ item.BasePrice }}
+        </p>
+      <p class="card-text col">
         <small class="text-muted">{{ item.ItemID }}</small>
       </p>
+
+    </div>
     </div>
   </div>
 </template>
@@ -53,6 +59,10 @@ export default {
       border-top:none}
     .card:nth-child(8),.card:nth-child(9), .card:nth-child(10), .card:nth-child(11)
     {border-right: none}
-
+  .base-price{ font-family: "Open Sans";
   }
+    text-align: left}
+.card-text:last-child {
+  text-align: right;
+}
 </style>
