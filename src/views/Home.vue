@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="center">
-      <img :alt="`${company.CompanyName} logo`" :src="companyLogo">
+
       <h1 class="display-4">{{ company.CompanyName }}</h1>
     </header>
     <div class="card-columns ">
