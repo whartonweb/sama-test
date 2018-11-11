@@ -1,4 +1,4 @@
-# wharton
+#Richard wharton
 
 ## Project setup
 ```
