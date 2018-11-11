@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <nav class="navbar  navbar-expand">
       <router-link class="navbar-brand" to="/">
-        <img src="http://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        <img :alt="`${company.CompanyName} logo`" :src="companyLogo">
       </router-link>
       <!-- Links -->
       <ul class="navbar-nav">
@@ -17,6 +17,24 @@
     <router-view/>
   </div>
 </template>
+<script>
+  export default {
+    name: 'App',
+    data () {
+      return {
+        company: this.$api.endpoints.getCompany(),
+        items: this.$api.endpoints.getItems(),
+        contact: this.$api.endpoints.getSalesRep()
+      }
+    },
+    computed: {
+      companyLogo () {
+        const id = this.company.ManufacturerID
+        return `http://images.repzio.com/productimages/${id}/logo${id}_lg.jpg`
+      }
+    }
+  }
+</script>
 <style lang="scss">
   @import '/assets/vars';
 #app {
